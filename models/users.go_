@@ -1,0 +1,76 @@
+// package models
+
+// import (
+// 	"database/sql"
+// 	"fmt"
+// 	"log"
+
+// 	"github.com/pmilenov-bg/dentist/screens"
+// )
+
+// type User struct {
+// 	Id       int64
+// 	Username string
+// 	Email    string
+// 	Password string
+// 	PhoneNum int
+// 	Company  string
+// 	Gender   string
+// 	Age      int
+// }
+
+// // loging/check the existing user
+// func (user *User) CheckUser(db *sql.DB) error {
+// 	err := db.QueryRow("SELECT id, username, email FROM users WHERE username = ? and email = ?", user.Username, user.Email).Scan(&user.Id, &user.Username, &user.Email)
+// 	if err != nil {
+// 		if err == sql.ErrNoRows {
+// 			fmt.Println("User does not exist, creating a new account.")
+// 			user.Email, user.Gender, user.Age = screens.RegisterScreen() // user.Email, user.Gender, user.Age = RegisterScreen()
+// 			services.DoRegister(db, user)
+
+// 		} else {
+// 			log.Fatal(err)
+// 		}
+// 	}
+// }
+
+// // Create an account Insert inserts the User to the database.
+// func (user *User) InsertUser(db *sql.DB) error {
+// 	// Insert the new user into the database
+// 	result, err := db.Exec("INSERT INTO users (username, email, password, company, gender, age) VALUES (?, ?, ?, ?, ?, ?, ?)",
+// 		user.Username, user.Email, user.Password, user.PhoneNum, user.Company, user.Gender, user.Age)
+// 	if err != nil {
+// 		log.Fatal(err)
+// 	}
+// 	id, _ := result.LastInsertId()
+// 	fmt.Printf("New user created with ID %d\n", id)
+// 	return nil
+// }
+
+// func DoRegister(db *sql.DB, user User) {
+
+// 	// send emails
+// 	// check fo the Verification of the Registration
+// 	// complete InsertUser
+// 	user.Insert(db)
+// 	fmt.Printf("New user created with ID %d\n", user.Id)
+
+// }
+
+// func VerificRegistr() {
+
+// }
+
+// func DeleteUser(db *sql.DB, user User) {
+// 	confirmPassword := screens.Prompt(`
+// 	Please enter the password?
+// 	-----
+// 	`)
+// 	// checking the password the password
+// 	// if Prompt != user.Password
+// 	deleteChoice := screens.Prompt(`
+// do you want to delete the account?
+// press y for Yest
+// or n to Cancel
+// ------`)
+// }

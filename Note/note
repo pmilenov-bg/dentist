@@ -1,0 +1,8 @@
+database: lowlevel db-driver -> select, create, update, delete
+    models: peristant layer -> user.create, user.delete
+        service: layer 
+            -> user.register (user.create, email.send_activate(user), )
+            -> import from csv(...filepath=/home/pete/somefile.csv)
+                -> read frm csv (all in memory)
+                -> user.insert(row)
+            -> email
