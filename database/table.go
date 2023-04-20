@@ -65,9 +65,9 @@ func CreateTable(db *sql.DB) {
 	createTable := `
 		CREATE TABLE IF NOT EXISTS patients (
             id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-            fname VARCHAR NOT NULL,
-            mname VARCHAR,
-            lname VARCHAR NOT NULL,
+            fname TEXT NOT NULL,
+            mname TEXT,
+            lname TEXT NOT NULL,
             egn BIGINT UNSIGNED NOT NULL,
             nzok_id BIGINT UNSIGNED,
             gender TEXT NOT NULL

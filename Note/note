@@ -6,3 +6,8 @@ database: lowlevel db-driver -> select, create, update, delete
                 -> read frm csv (all in memory)
                 -> user.insert(row)
             -> email
+
+
+new method for INSERT to insert new data 
+    only when is called with custom parameters 
+

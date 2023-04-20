@@ -17,4 +17,10 @@ func main() {
 	database.CreateTable(db)
 
 	services.Search(db)
+	// terms :=..prompt
+	// patients := services.Search(db, terms)
+	// list_patitions(patients)
+	// show_patitent(choice)
+
+	// services.Display([]models.Patient)
 }
